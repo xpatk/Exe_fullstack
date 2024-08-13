@@ -3,8 +3,10 @@ const app = express();
 const bodyParser = require("body-parser");
 const stuffRoutes = require("./routes/stuff");
 const userRoutes = require("./routes/user");
+const path = require("path");
 
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "images")));
 
 const mongoose = require("mongoose");
 
